@@ -3,10 +3,7 @@ package com.EcommerceWebsite.Shoes.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.EcommerceWebsite.Shoes.bean.Product;
 import com.EcommerceWebsite.Shoes.service.ProductService;
@@ -32,6 +29,12 @@ public class ProductController {
     public Map<String, Object> getProductByCategoryId(@RequestBody String id)
     {
         return productService.getProductByCategoryId(id);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value="/deleteProduct/{id}")
+    public Map<String, Object> deleteProduct(@PathVariable Long id)
+    {
+        return productService.deleteProduct(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/updateProduct")

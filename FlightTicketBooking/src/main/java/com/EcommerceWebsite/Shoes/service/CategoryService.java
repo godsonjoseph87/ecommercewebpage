@@ -34,4 +34,9 @@ public class CategoryService {
         return JsonResponseUtil.createJsonResponse("Data fetched successfully", 200, category);
     }
 
+    public Map<String, Object> deleteCategory(String id) {
+        categoryRepo.deleteByCatId(id);
+        return JsonResponseUtil.createJsonResponse("Category Deleted successfully", 200, "");
+    }
+
 }

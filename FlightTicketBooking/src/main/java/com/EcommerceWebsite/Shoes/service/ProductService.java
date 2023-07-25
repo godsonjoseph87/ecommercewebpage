@@ -46,4 +46,9 @@ public class ProductService {
         return JsonResponseUtil.createJsonResponse("Data fetched successfully", 200, category);
     }
 
+    public Map<String, Object> deleteProduct(Long id) {
+        productRepo.deleteById(id);
+        return JsonResponseUtil.createJsonResponse("Product Deleted", 200, "");
+    }
+
 }

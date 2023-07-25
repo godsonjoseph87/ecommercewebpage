@@ -3,10 +3,7 @@ package com.EcommerceWebsite.Shoes.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.EcommerceWebsite.Shoes.bean.Category;
 import com.EcommerceWebsite.Shoes.service.CategoryService;
@@ -26,6 +23,12 @@ public class CategoryController {
     public Map<String, Object> allCategory(@RequestBody Category category)
     {
         return categoryService.addCategory(category);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value="/deleteCategory/{id}")
+    public Map<String, Object> deleteCategory(@PathVariable String id)
+    {
+        return categoryService.deleteCategory(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getcategorybyid/{id}")

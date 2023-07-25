@@ -20,6 +20,7 @@
         <li><a href="#"  onclick="openPage('products')">Products</a></li>
         <li><a href="#"  onclick="openPage('orders')">Orders</a></li>
         <li><a href="#"  onclick="openPage('customers')">Customers</a></li>
+        <li><a href="#" class="logoutbutton" onclick="openPage('logout')">Logout</a></li>
     </ul>
 </div>
 <div class="container">
@@ -69,19 +70,6 @@
     </form>
     <button class="cancel-button" onclick="closeAddFlightForm()">Cancel</button>
 </div>
-
-<!--&lt;!&ndash; Modal Popup for Password Change &ndash;&gt;-->
-<!--<div id="passwordChangeModal" class="modal">-->
-<!--    <div class="modal-content">-->
-<!--        <h3>Change Password</h3>-->
-<!--        <form>-->
-<!--            <label for="newPassword">New Password:</label>-->
-<!--            <input type="password" id="newPassword" required>-->
-<!--            <button type="button"  onclick="saveNewAdminPassword()">Save</button>-->
-<!--            <button type="button" onclick="closePasswordChangeModal()">Cancel</button>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
 
 <script>
 
@@ -364,6 +352,9 @@
                 break;
             case "dashboard":
                 window.location.href = "./adminhomepage.html";
+                break;
+            case "logout":
+                window.location.href = "./adminlogin.html";
                 break;
         }
     }

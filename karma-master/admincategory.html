@@ -21,6 +21,7 @@
         <li><a href="#"  onclick="openPage('products')">Products</a></li>
         <li><a href="#"  onclick="openPage('orders')">Orders</a></li>
         <li><a href="#"  onclick="openPage('customers')">Customers</a></li>
+        <li><a href="#" class="logoutbutton" onclick="openPage('logout')">Logout</a></li>
     </ul>
 </div>
 <div class="container">
@@ -33,19 +34,7 @@
         <div class="category-list">
             <h2>Existing Categories</h2>
             <ul id="categoryUl">
-                <li>
-                    <span>Category 1</span>
-                    <button class="delete-button">Delete</button>
-                </li>
-                <li>
-                    <span>Category 2</span>
-                    <button class="delete-button">Delete</button>
-                </li>
-                <li>
-                    <span>Category 3</span>
-                    <button class="delete-button">Delete</button>
-                </li>
-                <!-- Add more categories here as needed -->
+
             </ul>
         </div>
 
@@ -56,10 +45,10 @@
     <div id="passwordChangeModal" class="modal hidden">
         <div class="modal-content">
             <form>
-                <label for="newPassword">New Category:</label>
-                <input type="password" id="newPassword" required>
-                <button type="button"  onclick="saveNewAdminPassword()">Save</button>
-                <button type="button" onclick="closePasswordChangeModal()">Cancel</button>
+                <label for="newcategoryname">New Category:</label>
+                <input type="text" id="newcategoryname" required>
+                <button type="button"  onclick="CreateNewCategory()">Save</button>
+                <button type="button" onclick="closeCreateCategory()">Cancel</button>
             </form>
         </div>
     </div>

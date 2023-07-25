@@ -23,8 +23,7 @@ public class OrdersService {
     }
 
     public Map<String, Object> getAllOrders() {
-        List<Orders> orders = new ArrayList<>();
-        orders = ordersRepo.findAll();
+        List<Map<String, Object>> orders = ordersRepo.getAllOrdersDetails();
         return JsonResponseUtil.createJsonResponse("Data Fetched Successfully.", 200, orders);
     }
 

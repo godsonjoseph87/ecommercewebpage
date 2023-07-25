@@ -123,7 +123,7 @@ td:last-child {
 .customlistbox{
     width: 100% !important;
     padding: 10px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 20px !important;
     border: 1px solid #ccc !important;
     border-radius: 5px !important;
 }
@@ -154,7 +154,7 @@ td:last-child {
 }
 
 .modal input {
-    width: 100%;
+    width: 92%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -257,4 +257,7 @@ td:last-child {
 }
 .hidden{
     display: none;
+}
+.logoutbutton{
+    color: red !important;
 }

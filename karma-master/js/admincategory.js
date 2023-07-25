@@ -27,18 +27,12 @@ window.onload = function () {
     getCategories();
 };
 
-function AddNewFlightDetails(){
+function CreateNewCategory(){
     const data = {
-        name: document.getElementById("flightName").value,
-        capacity: document.getElementById("capacity").value,
-        sourceid: document.getElementById("source").value,
-        airlineid: document.getElementById("airline").value,
-        destinationid: document.getElementById("destination").value,
-        time: document.getElementById("date").value,
-        price: document.getElementById("price").value
+        name: document.getElementById("newcategoryname").value,
     }
 
-    fetch("http://localhost:9192/flights", {
+    fetch("http://localhost:9192/savecategory", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -54,9 +48,9 @@ function AddNewFlightDetails(){
         })
         .then(data => {
             if(data.status_code == 200){
-                closeAddFlightForm();
-                clearAddFlightForms();
-                getAllFlightDetails();
+                closeCreateCategory();
+                document.getElementById("newcategoryname").value = "";
+                getCategories();
             }else{
                 alert("Authentication failed!");
             }
@@ -68,8 +62,8 @@ function AddNewFlightDetails(){
 
 }
 
-function deleteFlight(id) {
-    fetch("http://localhost:9192/flight/" + id, {
+function deleteCategory(id) {
+    fetch("http://localhost:9192/deleteCategory/" + id, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
@@ -84,7 +78,7 @@ function deleteFlight(id) {
         })
         .then(data => {
             if(data.status_code == 200){
-                getAllFlightDetails();
+                getCategories();
             }else{
                 alert("Authentication failed!");
             }
@@ -95,7 +89,7 @@ function deleteFlight(id) {
 }
 
 function getCategories(){
-    fetch("http://localhost:9192/airlines", {
+    fetch("http://localhost:9192/getallcategory", {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -110,13 +104,13 @@ function getCategories(){
         })
         .then(data => {
             if(data.status_code == 200){
-                const selectElement = document.getElementById('airline');
-                selectElement.innerHTML = '';
-                data.data.forEach((airline) => {
-                    const option = document.createElement('option');
-                    option.textContent = airline.airlinename;
-                    option.value = airline.id;
-                    selectElement.appendChild(option);
+                const categoryUl = document.getElementById('categoryUl');
+                categoryUl.innerHTML = '';
+                data.data.forEach((category) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = '<span>'+category.name+'</span> ' +
+                        '<button onclick="deleteCategory('+category.id+')" class="delete-button">Delete</button>';
+                    categoryUl.appendChild(li);
                 });
             }else{
                 alert("Authentication failed!");
@@ -130,6 +124,11 @@ function getCategories(){
 function openAddCategoryForm(){
     const modal = document.getElementById("passwordChangeModal");
     modal.style.display = "block";
+}
+
+function closeCreateCategory(){
+    const modal = document.getElementById("passwordChangeModal");
+    modal.style.display = "none";
 }
 
 
@@ -149,6 +148,9 @@ function openPage(pagename){
             break;
         case "dashboard":
             window.location.href = "./adminhomepage.html";
+            break;
+        case "logout":
+            window.location.href = "./adminlogin.html";
             break;
     }
 }

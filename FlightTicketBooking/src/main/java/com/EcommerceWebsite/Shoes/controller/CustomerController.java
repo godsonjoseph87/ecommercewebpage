@@ -1,6 +1,7 @@
 package com.EcommerceWebsite.Shoes.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class CustomerController {
 	public Optional<Customer> getCustomerDetails(@PathVariable String id)
 	{
 		return customerService.getCustomerDetails(id);
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value="/allCustomers")
+	public Map<String, Object> getCustomerDetails()
+	{
+		return customerService.getCustomerAllDetails();
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/customer")
