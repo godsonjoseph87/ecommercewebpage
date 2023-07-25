@@ -15,24 +15,36 @@
         <h2>Admin Dashboard</h2>
     </div>
     <ul class="nav-links">
-        <li><a href="#" onclick="openPage('dashboard')" class="optionselected">Dashboard</a></li>
+        <li><a href="#" onclick="openPage('dashboard')">Dashboard</a></li>
         <li><a href="#" onclick="openPage('category')">Category</a></li>
-        <li><a href="#"  onclick="openPage('products')">Products</a></li>
-        <li><a href="#"  onclick="openPage('orders')">Orders</a></li>
-        <li><a href="#"  onclick="openPage('customers')">Customers</a></li>
+        <li><a href="#" class="optionselected" onclick="openPage('products')">Products</a></li>
+        <li><a href="#" onclick="openPage('orders')">Orders</a></li>
+        <li><a href="#" onclick="openPage('customers')">Customers</a></li>
     </ul>
 </div>
 <div class="container">
     <h1>Welcome, Admin!</h1>
-    <div class="message-container">
-        <div class="message-content">
-            <p>Welcome to our exclusive admin dashboard for the premium shoe eCommerce website! As an admin, you hold the key to unlocking the full potential of our online store. With powerful tools and features at your fingertips, you have the authority to manage every aspect of the website and ensure a seamless shopping experience for our valued customers.</p>
-            <p>Here, you can effortlessly oversee product listings, update inventory, and track sales performance. Stay informed with real-time analytics and gain valuable insights into customer behavior and preferences. With a user-friendly interface, managing orders and handling customer queries becomes a breeze.</p>
-            <p>As an integral part of our team, your dedication and expertise are crucial in maintaining our reputation for providing top-notch footwear and exceptional service. Together, we can elevate our customers' shopping journey and build lasting relationships with our loyal clientele.</p>
-            <p>Thank you for being an essential part of our eCommerce success story. Your hard work and commitment are instrumental in shaping our brand's future. Keep up the great work, and together, let's take our shoe eCommerce website to new heights!</p>
-        </div>
-        <p class="message-signature">Best regards,<br>Sporty Shoes.</p>
+    <div class="flight-list">
+        <h2>List of Flights</h2>
+        <table id="flightTable">
+            <thead>
+            <tr>
+                <th>Flight Name</th>
+                <th>Route</th>
+                <th>Airline</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th></th> <!-- For the delete icon column -->
+            </tr>
+            </thead>
+            <tbody id="flightTableBody">
+            <!-- Table rows will be dynamically populated here -->
+            </tbody>
+            <!-- Add more flights here -->
+            </tbody>
+        </table>
     </div>
+    <button class="add-button" onclick="openAddFlightForm()">Add New Flight</button>
 </div>
 
 <!-- Add Flight Form (hidden by default) -->
@@ -69,19 +81,6 @@
     </form>
     <button class="cancel-button" onclick="closeAddFlightForm()">Cancel</button>
 </div>
-
-<!--&lt;!&ndash; Modal Popup for Password Change &ndash;&gt;-->
-<!--<div id="passwordChangeModal" class="modal">-->
-<!--    <div class="modal-content">-->
-<!--        <h3>Change Password</h3>-->
-<!--        <form>-->
-<!--            <label for="newPassword">New Password:</label>-->
-<!--            <input type="password" id="newPassword" required>-->
-<!--            <button type="button"  onclick="saveNewAdminPassword()">Save</button>-->
-<!--            <button type="button" onclick="closePasswordChangeModal()">Cancel</button>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
 
 <script>
 
@@ -367,7 +366,6 @@
                 break;
         }
     }
-
 </script>
 </body>
 </html>

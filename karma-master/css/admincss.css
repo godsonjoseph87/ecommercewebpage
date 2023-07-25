@@ -230,3 +230,31 @@ td:last-child {
     margin-left: 250px;
     padding: 20px;
 }
+.optionselected{
+    margin-left: 8px;
+    color: black !important;
+    padding: 8px;
+    background-color: white;
+    border-radius: 8px;
+}
+.message-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.message-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.message-content {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.message-signature {
+    font-size: 18px;
+    font-style: italic;
+}
+.hidden{
+    display: none;
+}
