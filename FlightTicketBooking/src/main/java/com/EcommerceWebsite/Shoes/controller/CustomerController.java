@@ -25,6 +25,12 @@ public class CustomerController {
 		return customerService.getCustomerDetails(id);
 	}
 
+	@RequestMapping(method = RequestMethod.POST, value="/customerLogin")
+	public Map<String, Object> getCustomerDetails(@RequestBody Customer customer)
+	{
+		return customerService.getUserdetailsFromUnamePass(customer);
+	}
+
 	@RequestMapping(method = RequestMethod.GET, value="/allCustomers")
 	public Map<String, Object> getCustomerDetails()
 	{
@@ -32,9 +38,9 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/customer")
-	public void addCustomer(@RequestBody Customer customer)
+	public Map<String, Object> addCustomer(@RequestBody Customer customer)
 	{
-		customerService.addCustomer(customer);
+		return customerService.addCustomer(customer);
 	}
 	
 }

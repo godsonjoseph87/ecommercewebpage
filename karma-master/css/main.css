@@ -4762,6 +4762,8 @@ label {
     .login_form_inner.reg_form h3 {
       margin-bottom: 70px; }
 
+
+
 .login_form .form-group input {
   height: 54px;
   border: none;
@@ -5791,3 +5793,133 @@ label {
     color: #ffba00; }
 
 /*# sourceMappingURL=main.css.map */
+.hidden{
+  display: none;
+}
+.padding-top-30px{
+  padding-top: 30px !important;
+}
+.insta-img-box{
+  height: 91px;
+}
+.margin-top-20px{
+  margin-top: 20px !important;
+}
+.margin-top-30px{
+  margin-top: 30px !important;
+}
+.error{
+  color: red !important;
+}
+
+.buy-now-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #FF8C00, #FF6347);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+/* Hover effect */
+.buy-now-button:hover {
+  background-image: linear-gradient(to right, #FF6347, #FF8C00);
+}
+.product-price{
+  color: green;
+}
+.product-image{
+  height: 275px !important;
+}
+
+
+
+.modal-cus {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.width100{
+  width: 100% !important;
+}
+.thankyouimage{
+  height: 197px;
+  width: 361px;
+  margin-bottom: 20px;
+}
+.thankyoumodal{
+  width: 100%;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30% !important;
+}
+.expiry-textbox{
+  width: 48% !important;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.align-text-center{
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.card-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+.cancelorderbutton{
+  float: right;
+  width: 15% !important;
+}

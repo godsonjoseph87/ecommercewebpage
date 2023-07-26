@@ -13,7 +13,7 @@ public class Payments {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String bookingid;
+	private String customerid;
 	private String cardno;
 	private String cvv;
 	private String expirydate;
@@ -23,12 +23,20 @@ public class Payments {
 	public Payments() {
 		
 	}
-	
-	
-	public Payments(Long id, String bookingid, String cardno, String cvv, String expirydate) {
+
+
+	public String getCustomerid() {
+		return customerid;
+	}
+
+	public void setCustomerid(String customerid) {
+		this.customerid = customerid;
+	}
+
+	public Payments(Long id, String customerid, String cardno, String cvv, String expirydate) {
 		super();
 		this.id = id;
-		this.bookingid = bookingid;
+		this.customerid = customerid;
 		this.cardno = cardno;
 		this.cvv = cvv;
 		this.expirydate = expirydate;
@@ -38,12 +46,6 @@ public class Payments {
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public String getBookingid() {
-		return bookingid;
-	}
-	public void setBookingid(String bookingid) {
-		this.bookingid = bookingid;
 	}
 	public String getCardno() {
 		return cardno;

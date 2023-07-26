@@ -3,10 +3,7 @@ package com.EcommerceWebsite.Shoes.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.EcommerceWebsite.Shoes.bean.Orders;
 import com.EcommerceWebsite.Shoes.service.OrdersService;
@@ -23,7 +20,7 @@ public class OrdersController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value="/getOrderByUserId/{id}")
-    public Map<String, Object> getOrderByUserId(@RequestBody String id)
+    public Map<String, Object> getOrderByUserId(@PathVariable String id)
     {
         return ordersService.getOrderByUserId(id);
     }
@@ -35,7 +32,7 @@ public class OrdersController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/updateOrder")
-    public Map<String, Object> updateOrder(Orders order)
+    public Map<String, Object> updateOrder(@RequestBody Orders order)
     {
         return ordersService.updateOrder(order);
     }

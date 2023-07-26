@@ -28,7 +28,7 @@ public class OrdersService {
     }
 
     public Map<String, Object> getOrderByUserId(String id) {
-        List<Orders> order = ordersRepo.findByUserId(id);
+        List<Map<String, Object>> order = ordersRepo.findByUserId(id);
         return JsonResponseUtil.createJsonResponse("Data fetched successfully", 200, order);
     }
 
@@ -38,7 +38,9 @@ public class OrdersService {
     }
 
     public Map<String, Object> updateOrder(Orders order) {
-        ordersRepo.save(order);
+        Long orderid = order.getId();
+        String orderstatus = order.getOrderstatus();
+        ordersRepo.UpdateOrderStatus(orderstatus, orderid);
         return JsonResponseUtil.createJsonResponse("Order Updated Successfully", 200, "");
     }
 

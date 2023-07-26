@@ -65,7 +65,7 @@ function getAllProducts(){
                     name.textContent = products.name;
 
                     const categoryid = newRow.insertCell();
-                    categoryid.textContent = products.categoryid;
+                    categoryid.textContent = products.categoryname;
 
                     const description = newRow.insertCell();
                     description.textContent = products.description;
@@ -74,7 +74,7 @@ function getAllProducts(){
                     image.textContent = products.image;
 
                     const quantity = newRow.insertCell();
-                    quantity.textContent = products.image;
+                    quantity.textContent = products.quantity;
 
                     const price = newRow.insertCell();
                     price.textContent = products.price;
@@ -94,6 +94,23 @@ function getAllProducts(){
             alert("Something went wrong!");
         });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const maxChars = 20;
+    const inputElement = document.getElementById('pdescription');
+    const charCountElement = document.getElementById('charCount');
+
+    inputElement.addEventListener('input', function () {
+        const remainingChars = maxChars - this.value.length;
+        charCountElement.textContent = remainingChars;
+
+        // If the input exceeds the character limit, truncate the input text
+        if (remainingChars < 0) {
+            this.value = this.value.slice(0, maxChars);
+            charCountElement.textContent = '0';
+        }
+    });
+});
 
 function CreateNewProduct(){
     const data = {

@@ -7,11 +7,19 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ProductRepository extends JpaRepository<Product, String>{
 
-    @Query(value="select * from product where categoryid=?1", nativeQuery = true)
-    public List<Product> findByCategoryId(String id);
+    @Query(value="select p.name, p.description, p.price, p.image, p.quantity, " +
+            " c.name as categoryname from product as p " +
+            "left join categories as c on c.id = p.categoryid where p.categoryid=?1", nativeQuery = true)
+    public List<Map<String, Object>> findByCategoryId(String id);
+
+    @Query(value="select p.name, p.description, p.price, p.image, p.quantity, " +
+            " c.name as categoryname from product as p " +
+            "left join categories as c on c.id = p.categoryid", nativeQuery = true)
+    public List<Map<String, Object>> findAllWithCatName();
 
     @Transactional
     @Modifying

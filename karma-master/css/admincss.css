@@ -261,3 +261,17 @@ td:last-child {
 .logoutbutton{
     color: red !important;
 }
+
+#productstable td:nth-child(5) {
+    /* Limit the width of the second column */
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.char-count{
+    position: absolute;
+    top: 211px;
+    font-size: 11px;
+    left: 315px;
+}

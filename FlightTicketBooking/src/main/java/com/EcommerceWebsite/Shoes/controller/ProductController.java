@@ -26,7 +26,7 @@ public class ProductController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value="/getProductByCategoryId/{id}")
-    public Map<String, Object> getProductByCategoryId(@RequestBody String id)
+    public Map<String, Object> getProductByCategoryId(@PathVariable String id)
     {
         return productService.getProductByCategoryId(id);
     }

@@ -36,13 +36,12 @@ public class ProductService {
     }
 
     public Map<String, Object> getAllProducts() {
-        List<Product> product = new ArrayList<>();
-        product = productRepo.findAll();
+        List<Map<String, Object>> product = productRepo.findAllWithCatName();
         return JsonResponseUtil.createJsonResponse("Data Fetched Successfully.", 200, product);
     }
 
     public Map<String, Object> getProductByCategoryId(String id) {
-        List<Product> category = productRepo.findByCategoryId(id);
+        List<Map<String, Object>> category = productRepo.findByCategoryId(id);
         return JsonResponseUtil.createJsonResponse("Data fetched successfully", 200, category);
     }
 
