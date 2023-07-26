@@ -11,6 +11,15 @@ window.onload = function () {
     }
 };
 
+function logout_user(){
+    localStorage.removeItem("customer_name");
+    localStorage.removeItem("customer_phone");
+    localStorage.removeItem("customer_id");
+    localStorage.removeItem("customer_email");
+    localStorage.removeItem("customer_address");
+    window.location.href = "../karma-master/login.html";
+}
+
 function cancelorder(id){
     const data = {
         id: id,
